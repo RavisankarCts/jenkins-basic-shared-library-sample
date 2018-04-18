@@ -1,4 +1,4 @@
-def promote (stackname, hostname, version, stage) {
+def call (stackname, hostname, version, stage) {
 	dir('CustomerConsents'){
 		def yaml;
         if(stackname.equals(tststack)) {
