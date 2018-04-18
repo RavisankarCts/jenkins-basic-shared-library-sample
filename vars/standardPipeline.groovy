@@ -13,21 +13,21 @@ def call(body) {
 	        	checkout scm
 	        }
 	        stage ('Build') {
-	        	sh "echo 'building ${config.projectName} ...'"
+	        	cmd "echo 'building ${config.projectName} ...'"
 	        }
 	        stage ('Tests') {
 		        parallel 'static': {
 		            sh "echo 'shell scripts to run static tests...'"
 		        },
 		        'unit': {
-		            sh "echo 'shell scripts to run unit tests...'"
+		            cmd "echo 'shell scripts to run unit tests...'"
 		        },
 		        'integration': {
-		            sh "echo 'shell scripts to run integration tests...'"
+		            cmd "echo 'shell scripts to run integration tests...'"
 		        }
 	        }
 	      	stage ('Deploy') {
-	            sh "echo 'deploying to server ${config.serverDomain}...'"
+	            cmd "echo 'deploying to server ${config.serverDomain}...'"
 	      	}
 	    } catch (err) {
 	        currentBuild.result = 'FAILED'
