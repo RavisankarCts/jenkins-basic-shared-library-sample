@@ -12,7 +12,7 @@ def call (stackname, hostname, version, stage) {
             yaml = yaml.replaceAll("#TIPSTUBNAME#", "${wiremockappname}")
             yaml = yaml.replaceAll("#RABBIT_HOST#", rabbitmqhost)
         } else {
-            yaml =readFile "${env.WORKSPACE}/CustomerConsents/docker-compose.yaml"
+            yaml =readFile "${env.WORKSPACE}/docker-compose.yaml"
         }
         yaml = yaml.replaceAll("#ELASTICURL#", elasticurl)
         yaml = yaml.replaceAll("#VERSION#", version)
