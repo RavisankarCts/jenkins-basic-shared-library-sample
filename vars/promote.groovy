@@ -4,6 +4,7 @@ import groovy.transform.Field
 
 def call (stackname, hostname, version, stage) {
 	println tststack
+	bat 'dir'
 	dir('CustomerConsents'){
 		def yaml;
         if(stackname.equals(tststack)) {
