@@ -1,4 +1,9 @@
+import groovy.transform.Field
+
+@Field final String tststack = 'constant'
+
 def call (stackname, hostname, version, stage) {
+	println tststack
 	dir('CustomerConsents'){
 		def yaml;
         if(stackname.equals(tststack)) {
