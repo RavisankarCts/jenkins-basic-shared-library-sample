@@ -1,4 +1,5 @@
 import groovy.transform.Field
+import static Constants.*
 
 @Field final String tststack = 'constant'
 
