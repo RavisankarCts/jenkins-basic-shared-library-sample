@@ -1,7 +1,7 @@
-def runAutotests(tag){
+def call(tag){
 	dir('CustomerConsents/customer-consents-autotests'){
 		try{
-			sh "mvn verify -PcomponentTests -Dspring.profiles.active=tst -Dcucumber.options=\"--tags ${tag}\""
+			bat "mvn verify -PcomponentTests -Dspring.profiles.active=tst -Dcucumber.options=\"--tags ${tag}\""
 		} catch (err){
 			error("An error occurred while running autotests " + err)
 			throw err
