@@ -9,7 +9,7 @@ def call (stackname, hostname, version, stage) {
 	dir('CustomerConsents'){
 		def yaml;
         if(stackname.equals(tststack)) {
-            yaml =readFile "${env.WORKSPACE}/CustomerConsents/docker-compose-wiremock.yaml"
+            yaml =readFile "${env.WORKSPACE}/docker-compose-wiremock.yaml"
             yaml = yaml.replaceAll("#TIPSTUBHOST#", "http://${wiremockhost}")
             yaml = yaml.replaceAll("#TIPSTUBNAME#", "${wiremockappname}")
             yaml = yaml.replaceAll("#RABBIT_HOST#", rabbitmqhost)
