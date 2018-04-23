@@ -1,6 +1,6 @@
 class Constants
 {
-static final appname = "customer-consents"
+@Field static final appname = "customer-consents"
 static final wiremockappname ="wiremock-tip-customer-consents"
 static final rabbitmqappname = "rabbitmq"
 
